@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>
+        <?php bloginfo('name'); ?>
+    </title>
+    <meta name="description" content="Portal do Conselho Regional de Enfermagem.">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<?php bloginfo('name'); ?>" />
+    <meta property="og:description" content="Portal do Conselho Regional de Enfermagem." />
+    <meta property="og:url" content="http://crem.gov.br" />
+    <meta property="og:image" content="http://http://crem.gov.br/img/og-image.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <title>
+        <?php bloginfo('name'); ?>
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Scripts Font Awesome -->
+    <script src="https://use.fontawesome.com/1d44302f92.js"></script>
+
+    <!-- Inicio Wordpress Header -->
+    <?php wp_head(); ?>
+    <!-- Final Wordpress Header -->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://localhost/crem/">Página Inicial</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/crem/sobre/">Sobre</a>
+                    </li>
+                    <li>
+                        <a href="/crem/noticias/">Notícias</a>
+                    </li>
+                    <li>
+                        <a href="/crem/galeria/">Galeria</a>
+                    </li>
+                    <li>
+                        <a href="/crem/eventos/">Eventos</a>
+                    </li>
+                    <li>
+                        <a href="/crem/contato/">Contato</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Portais
+          <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">APE</a></li>
+                            <li><a href="#">FAE</a></li>
+                            <li><a href="#">SEU</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Image Background Page Header -->
+    <!-- Note: The background image is set within the business-casual.css file. -->
+    <header class="business-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!--  <h1 class="tagline">Conselho Regional de Enfermagem do Mercosul</h1>-->
+                </div>
+            </div>
+        </div>
+    </header>
+    <?php
+// Template Name: Home
+get_header();
+?>
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <!-- Page Content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2>
+                        <?php the_field('titulo_home_introducao'); ?>
+                    </h2>
+                    <p>
+                        <?php the_field('texto_home_introducao'); ?>
+                    </p>
+                    <p>
+                        <a class="btn btn-primary btn-lg" href="/crem/sobre/">Saiba mais &raquo;</a>
+                    </p>
+                </div>
+                <div class="col-sm-4">
+
+                    <div class="videoInst">
+                        <img class="img-square img-responsive img-center" src="<?php echo get_stylesheet_directory_uri(); ?>/img/Thumbnail-v%C3%ADdeo_300x200px.png" alt="Vídeo Intsitucional">
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+            <?php include(TEMPLATEPATH . "/inc/orgaos.php"); ?>
+
+            <?php include(TEMPLATEPATH . "/inc/servicos.php"); ?>
+        </div>
+
+        <!-- /.row -->
+
+        <hr>
+
+        <?php endwhile; else: endif; ?>
+
+        <?php get_footer(); ?>
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <address>
+                        <strong>Conselho Regional de Enfermagem do Mercosul</strong>
+                        <br>SHTN Quadra 12 Lote 3
+                        <br>Brasília, DF 70655
+                        <br><br>
+                        <abbr title="Telefone">Telefone: </abbr>(55) (61) 1456-7890<br>
+                        <abbr title="Email">Email: </abbr> <a href="mailto:#">name@example.com</a>
+                    </address>
+                    </div>
+                    <div class="col-sm-4">
+                        <strong>CREM nas Redes Sociais</strong><br>
+                        <a href=# title="facebook"><i class="fa fa-facebook-square fa-4x" aria-hidden="true"></i></a>
+                        <a href=# title="twitter"><i class="fa fa-twitter-square fa-4x" aria-hidden="true"></i></a>
+                        <a href=# title="instagram"><i class="fa fa-instagram fa-4x" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="col-sm-4">
+                        <p><i class="fa fa-copyright" aria-hidden="true"></i>Desenvolvido por <strong>Conselho Federal de Enfermagem</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /.row -->
+        </footer>
+
+
+        <!-- /.container -->
+
+        <!-- jQuery -->
+        <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/bootstrap.min.js"></script>
+
+        <!-- Inicio Wordpress Footer -->
+        <?php wp_footer(); ?>
+        <!-- Final Wordpress Footer -->
+
+</body>
+
+</html>
